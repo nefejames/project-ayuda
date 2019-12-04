@@ -1,0 +1,249 @@
+/*variables*/
+:root {
+  --header-color: #0047ab;
+  --main-header-size: 2.5rem;
+  --sub-header-size: 2rem;
+  --line-height: 2rem;
+  --footer-header-size: 1.3rem;
+  --light-blue-bg: #dfecff;
+  --base-pink-color: #ff44ff;
+  --text-size: 1.3rem;
+}
+
+/*========Univeral Styles=======*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+  list-style: none;
+  text-decoration: none;
+}
+
+/*======Utility Styles=====*/
+body {
+  overflow-x: hidden;
+}
+
+/*=======Header Section Styles======*/
+
+header {
+  background: #ff44ff;
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  position: relative;
+  min-height: 8vh;
+  align-items: center;
+}
+
+header input[type="checkbox"] {
+  display: none;
+}
+
+header label.burger {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+header input:checked + .navbar {
+  transform: translateX(0);
+}
+
+header h1 {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+}
+
+.navbar {
+  color: black;
+  display: flex;
+  background: #ff44ff;
+  justify-content: center;
+  position: absolute;
+  top: 8vh;
+  right: 0;
+  left: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  justify-content: space-around;
+  text-align: center;
+  padding: 2rem;
+}
+
+.navbar a {
+  color: black;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+/*header media queries*/
+@media screen and (min-width: 870px) {
+  .navbar {
+    min-width: 50%;
+  }
+}
+@media screen and (min-width: 900px) {
+  header {
+    padding: 1rem 5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar {
+    transform: translateX(0);
+    position: static;
+    width: 40%;
+    height: 3vh;
+  }
+
+  .navbar ul {
+    flex-direction: row;
+    height: 0;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  header label.burger {
+    display: none;
+  }
+}
+
+/*=====Hero Section Styles=====*/
+main p {
+  font-size: var(--text-size);
+}
+
+.section-container {
+  padding: 2rem 1rem;
+}
+section.hero {
+  font-weight: 500;
+  /* background: green; */
+  /* margin-bottom: 1rem; */
+  line-height: var(--line-height);
+  background: var(--light-blue-bg);
+}
+
+section.hero h2 {
+  color: var(--header-color);
+  font-size: var(--sub-header-size);
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+/*hero section media queries*/
+@media screen and (min-width: 900px) {
+  .section-container {
+    padding: 4rem 1rem;
+  }
+
+  .section-container .section {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/*=====Partners Section Styles=====*/
+.partner {
+  margin-bottom: 3rem;
+}
+
+.partner img.logo {
+  width: 150px;
+}
+
+.partner-details {
+  margin-top: 0.5rem;
+}
+.partner p {
+  color: rgb(59, 57, 57);
+  /* font-size: 1.15rem; */
+}
+
+/*partners section media queries*/
+@media screen and (min-width: 900px) {
+  .partners .section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 400px;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .partner {
+    flex-basis: 400px;
+    margin: 3rem 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .partner-details p {
+    width: 100%;
+  }
+}
+
+/*=====footer section styles======*/
+footer {
+  font-size: var(--text-size);
+  line-height: var(--line-height);
+  padding: 2rem 1rem;
+  background: var(--base-pink-color);
+}
+
+.footer-section {
+  margin-bottom: 2rem;
+}
+
+footer h3 {
+  text-transform: uppercase;
+  font-size: var(--footer-header-size);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: black;
+}
+
+footer li {
+  margin-bottom: 0.6rem;
+  text-transform: capitalize;
+}
+
+footer a {
+  color: black;
+}
+
+.footer-section:last-child .footer-section-links {
+  font-size: 2rem;
+}
+
+.footer-section:last-child .footer-section-links ul {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+}
+
+/*footer media queries*/
+@media screen and (min-width: 900px) {
+  footer .footer-section-content {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  footer .footer-section {
+    margin-bottom: 0;
+  }
+
+  .footer-section:last-child .footer-section-links ul {
+    width: 100%;
+  }
+}

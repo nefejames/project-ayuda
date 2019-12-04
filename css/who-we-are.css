@@ -1,0 +1,321 @@
+/*variables*/
+:root {
+  --header-color: #0047ab;
+  --main-header-size: 2.5rem;
+  --sub-header-size: 2rem;
+  --line-height: 2rem;
+  --footer-header-size: 1.3rem;
+  --light-blue-bg: #dfecff;
+  --base-pink-color: #ff44ff;
+  --text-size: 1.3rem;
+}
+
+/*========Univeral Styles=======*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+  list-style: none;
+  text-decoration: none;
+}
+
+/*======Utility Styles=====*/
+body {
+  overflow-x: hidden;
+}
+
+/*=======Header Section Styles======*/
+
+header {
+  background: #ff44ff;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  min-height: 8vh;
+  align-items: center;
+  padding: 1rem;
+}
+
+header input[type="checkbox"] {
+  display: none;
+}
+
+header label.burger {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+header input:checked + .navbar {
+  transform: translateX(0);
+}
+
+header h1 {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+}
+
+.navbar {
+  color: black;
+  display: flex;
+  background: #ff44ff;
+  justify-content: center;
+  position: absolute;
+  top: 8vh;
+  right: 0;
+  left: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  justify-content: space-around;
+  text-align: center;
+  padding: 2rem;
+}
+
+.navbar a {
+  color: black;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+/*header media queries*/
+@media screen and (min-width: 870px) {
+  .navbar {
+    min-width: 50%;
+  }
+}
+@media screen and (min-width: 900px) {
+  header {
+    padding: 1rem 5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar {
+    transform: translateX(0);
+    position: static;
+    width: 40%;
+    height: 3vh;
+  }
+
+  .navbar ul {
+    flex-direction: row;
+    height: 0;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  header label.burger {
+    display: none;
+  }
+}
+
+/*========Main Section Styles========*/
+main p {
+  font-size: var(--text-size);
+}
+
+/*==========HERO SECTION STYLES==========*/
+.hero-section {
+  background: url("https://res.cloudinary.com/nefejames/image/upload/v1575388744/project%20ayuda/who-we-are_bg_img_h33lva.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-attachment: fixed;
+}
+
+.hero-section h2 {
+  text-transform: uppercase;
+  font-size: var(--main-header-size);
+  color: white;
+}
+
+/*main section styles*/
+.section-container {
+  font-weight: 500;
+  margin-bottom: 2rem;
+  line-height: var(--line-height);
+  padding: 0 1rem;
+}
+
+.section-container:first-child {
+  margin-bottom: 0;
+}
+
+.section-container.section-bg {
+  padding: 2rem 1rem;
+  background: var(--light-blue-bg);
+}
+
+.section-container h3 {
+  color: var(--header-color);
+  font-size: var(--sub-header-size);
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.section-container a {
+  color: white;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #0047ab;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: background-color 0.3s;
+}
+
+.section-container a:hover {
+  background: #115dc7;
+}
+
+/*section media queries*/
+@media screen and (min-width: 900px) {
+  main {
+    margin: 0;
+  }
+  .section-container {
+    text-align: center;
+    padding: 4rem 1rem;
+    margin-bottom: 0;
+  }
+
+  .section-container.section-bg {
+    padding: 4rem 1rem;
+  }
+
+  .section-container a {
+    margin-top: 2rem;
+  }
+
+  .section-container:nth-child(2) .section,
+  .section-container:nth-child(3) .section {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .section-container:nth-child(4) .section {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/*==========VALUE SECTION STYLES==========*/
+.value {
+  margin-bottom: 2rem;
+}
+
+.value:last-child {
+  margin: 0;
+}
+
+.value h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+/*value section media queries*/
+@media screen and (min-width: 900px) {
+  .values-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 400px;
+    justify-content: space-evenly;
+  }
+
+  .value {
+    flex-basis: 400px;
+    margin: 3rem 1rem;
+  }
+
+  .value:last-child {
+    margin: 3rem 1rem 0;
+  }
+}
+
+/*============ceo quote section styles=========*/
+.ceo-details {
+  margin-top: 1rem;
+}
+
+.ceo-details p:first-child {
+  margin-bottom: 0.2rem;
+  text-transform: capitalize;
+}
+
+.ceo-details p:last-child {
+  color: rgb(75, 73, 73);
+}
+
+/*ceo quote section media queries*/
+@media screen and (min-width: 900px) {
+  section.ceo .section {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/*=====footer section styles======*/
+footer {
+  font-size: var(--text-size);
+  line-height: var(--line-height);
+  padding: 2rem 1rem;
+  background: var(--base-pink-color);
+}
+
+.footer-section {
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+}
+
+footer h3 {
+  text-transform: uppercase;
+  font-size: var(--footer-header-size);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: black;
+}
+
+footer li {
+  margin-bottom: 0.6rem;
+}
+
+footer a {
+  color: black;
+}
+
+.footer-section:last-child .footer-section-links {
+  font-size: 2rem;
+}
+
+.footer-section:last-child .footer-section-links ul {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+}
+
+/*footer media queries*/
+@media screen and (min-width: 900px) {
+  footer .footer-section-content {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  footer .footer-section {
+    margin-bottom: 0;
+  }
+
+  .footer-section:last-child .footer-section-links ul {
+    width: 100%;
+  }
+}
