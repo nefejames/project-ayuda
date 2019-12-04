@@ -20,8 +20,12 @@
   text-decoration: none;
 }
 
-/*=======Header Section Styles======*/
+/*======Utility Styles=====*/
+body {
+  overflow-x: hidden;
+}
 
+/*=======Header Section Styles======*/
 header {
   background: #ff44ff;
   display: flex;
