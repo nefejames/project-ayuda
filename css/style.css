@@ -182,7 +182,6 @@ div.img-container img {
 @media screen and (min-width: 500px) {
   .section {
     width: 80%;
-    margin: 0 auto;
   }
 }
 
